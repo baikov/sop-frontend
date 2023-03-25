@@ -9,6 +9,5 @@ const catalogMenu = await getCatalogMenu()
 <template>
   <div>
     <CatalogLeftMenu :menu="catalogMenu" />
-    <p>After menu</p>
   </div>
 </template>

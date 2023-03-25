@@ -11,20 +11,20 @@ const month = `0${(new Date().getMonth() + 1).toString().slice(-2)}`
       <div class="flex items-center gap-3 text-sm">
         <NuxtLink
           class="font-bold hover:text-gray-800 dark:hover:text-zinc-200"
-          to="tel:79999999999"
+          to="tel:78312140314"
         >
-          +7 (999) 999-99-99
+          +7 (831) 214-03-14
         </NuxtLink>
         <span class="mx-2 h-4 w-px bg-slate-100 lg:mx-2" aria-hidden="true" />
         <NuxtLink
           class="font-bold hover:text-gray-800 dark:hover:text-zinc-200"
-          to="mailto:info@mymail.com"
+          to="mailto:info@soptorg.ru"
         >
-          info@mymail.com
+          info@soptorg.ru
         </NuxtLink>
       </div>
       <div class="text-sm">
-        <span>Download price for {{ month }}.{{ year }}: </span>
+        <span>Актуальный прайс на {{ month }}.{{ year }}: </span>
         <NuxtLink
           to="#"
           class="font-bold underline hover:text-gray-800 dark:hover:text-zinc-200"

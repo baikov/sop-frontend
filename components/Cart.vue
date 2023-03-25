@@ -6,8 +6,8 @@
         class="h-6 w-6 flex-shrink-0"
         aria-hidden="true"
       />
-      <span class="ml-2 hidden text-sm font-medium lg:block">$200</span>
-      <span class="sr-only">Cart</span>
+      <span class="ml-2 hidden text-sm font-medium lg:block">(Пусто)</span>
+      <span class="sr-only">Корзина</span>
     </NuxtLink>
   </div>
 </template>

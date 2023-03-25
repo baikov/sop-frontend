@@ -3,7 +3,15 @@ import type { MenuItem } from 'types'
 const { getCatalogMenu } = useMenu()
 const catalogMenu = await getCatalogMenu()
 const mainMenu: MenuItem[] = [
-  { id: 274, name: 'О компании', depth: 1, slug: 'about', submenu: [] },
+  {
+    id: 274,
+    name: 'О компании',
+    depth: 1,
+    slug: 'company',
+    submenu: [
+      { id: 277, name: 'Реквизиты', depth: 1, slug: 'requisites', submenu: [] },
+    ],
+  },
   { id: 275, name: 'Услуги', depth: 1, slug: 'services', submenu: [] },
   { id: 276, name: 'Контакты', depth: 1, slug: 'contacts', submenu: [] },
 ]

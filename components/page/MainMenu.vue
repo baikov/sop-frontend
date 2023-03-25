@@ -103,17 +103,8 @@ const props = defineProps<Props>()
         active-class="underline"
         class="block cursor-pointer whitespace-nowrap py-2 px-4 transition-colors ease-in-out hover:bg-white/10"
       >
-        {{ subitem.name }} - {{ `${item.slug}/${subitem.slug}` }}
-      </NuxtLink>
-
-      <!-- <a
-        v-for="subitem in item.submenu"
-        :key="subitem.id"
-        class="block cursor-pointer whitespace-nowrap py-2 px-4 transition-colors ease-in-out hover:bg-white/10"
-        @click="$router.push(`/${item.slug}/${subitem.slug}`)"
-      >
         {{ subitem.name }}
-      </a> -->
+      </NuxtLink>
     </div>
   </div>
 </template>

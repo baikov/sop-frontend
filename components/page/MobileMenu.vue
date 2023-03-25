@@ -58,7 +58,7 @@ const toggleSubmenu = (id: number) => {
             "
             @click="toggleSubmenu(item.id)"
           >
-            <NuxtLink :to="item.slug" @click="toggleDrawer()">
+            <NuxtLink :to="`/${item.slug}`" @click="toggleDrawer()">
               {{ item.name }}
             </NuxtLink>
             <Icon
@@ -77,7 +77,7 @@ const toggleSubmenu = (id: number) => {
               <NuxtLink
                 v-for="subitem in item.submenu"
                 :key="subitem.id"
-                :to="subitem.slug"
+                :to="`/${item.slug}/${subitem.slug}`"
                 class="block cursor-pointer whitespace-nowrap py-2 px-4 transition-colors ease-in-out hover:bg-white/10"
                 @click="toggleDrawer()"
               >

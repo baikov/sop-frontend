@@ -1,0 +1,43 @@
+version: '3.9'
+
+volumes:
+  node_modules: {}
+
+services:
+  nuxt:
+    build:
+      context: ./
+    image: nuxt_prod
+    container_name: nuxt_prod
+    volumes:
+    - node_modules:/app/node_modules
+    networks:
+      - front
+      - back
+    restart: unless-stopped
+    expose:
+      - 3000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nuxt.priority=5"
+      # Asociates router with your specific domain or subdomain and websecure (https)
+      # - "traefik.http.routers.nuxt.rule=Host(`${DOMAIN}`) || Host(`www.${DOMAIN}`)"
+      - "traefik.http.routers.nuxt.rule=(Host(`${DOMAIN}`) || Host(`www.${DOMAIN}`))"
+      - "traefik.http.routers.nuxt.entrypoints=websecure"
+      # Enables tls
+      - "traefik.http.routers.nuxt.tls=true"
+      # Asociation with resolver (see static.yml file)
+      - "traefik.http.routers.nuxt.tls.certresolver=letsencrypt"
+      # add security middleware
+      - "traefik.http.routers.nuxt.middlewares=security-headers@file,compression@file"
+      # Set default options (see dynamic.yaml for this)
+      - "traefik.http.routers.nuxt.tls.options=default"
+      # loadbalancer
+      - "traefik.http.services.nuxt.loadbalancer.server.port=3000"
+      - "traefik.docker.network=front"
+
+networks:
+  front:
+    name: front
+  back:
+    name: back

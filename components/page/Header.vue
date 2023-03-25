@@ -1,9 +1,5 @@
 <script lang="ts" setup>
 import type { MenuItem } from 'types'
-// const { data: menu, pending } = useLazyFetch<MenuItem[]>("/api/menu", {
-//   // params: {"root": "true"}
-//   // server: false,
-// });
 const { getCatalogMenu } = useMenu()
 const catalogMenu = await getCatalogMenu()
 const mainMenu: MenuItem[] = [
@@ -44,20 +40,6 @@ const mainMenu: MenuItem[] = [
 </template>
 
 <style>
-/* .slide-fade-enter-active {
-  transition: all 0.3s ease-out;
-}
-
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
-  opacity: 0;
-} */
-
 .slide-fade-from-left-enter-active {
   transition: all 0.3s ease-out;
 }

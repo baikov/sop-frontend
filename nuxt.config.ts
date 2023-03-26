@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   components: true,
   ssr: true,
   typescript: {
-    strict: true,
+    strict: false,
     typeCheck: true,
     shim: false,
   },

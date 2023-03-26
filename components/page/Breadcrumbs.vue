@@ -49,4 +49,52 @@ defineProps<{
       </li>
     </ol>
   </nav>
+  <!-- <section class="relative mx-auto flex h-full w-full flex-1 flex-col">
+    <div class="mx-auto w-full max-w-7xl p-4">
+      <nav class="flex py-3 border-y" aria-label="Breadcrumb">
+        <ol role="list" class="flex items-center space-x-4">
+          <li>
+            <div class="flex items-center">
+              <a href="#" class="inline-flex items-center text-sm font-medium text-gray-500 duration-200 hover:text-gray-700 hover:scale-95">
+                <ion-icon class="flex-shrink-0 w-4 h-4 md hydrated" name="home-outline" role="img" aria-label="home outline" />
+                <span class="ml-4">
+                  Parent
+                </span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <span class="flex-shrink-0 w-5 h-5 text-gray-300">
+                /
+              </span>
+              <a href="#" class="ml-4 text-sm font-medium text-gray-500 hover:scale-95 hover:text-gray-700">
+                Parent
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <span class="flex-shrink-0 w-5 h-5 text-gray-300">
+                /
+              </span>
+              <a href="#" class="ml-4 text-sm font-medium text-gray-500 hover:scale-95 hover:text-gray-700">
+                Parent
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <span class="flex-shrink-0 w-5 h-5 text-gray-300">
+                /
+              </span>
+              <a href="#" class="ml-4 text-sm font-medium text-blue-500 hover:scale-95 hover:text-gray-700" aria-current="page">
+                Current
+              </a>
+            </div>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </section> -->
 </template>

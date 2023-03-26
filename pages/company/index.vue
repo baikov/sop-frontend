@@ -62,7 +62,7 @@ const breadcrumbs = [
         </div>
         <div class="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <NuxtPicture
-            src="/img/about.jpg"
+            src="about.jpg"
             sizes="sm:300px md:600px lg:1000px"
             alt="О компании СПЕЦОПТТОРГ"
             title="О компании СПЕЦОПТТОРГ"

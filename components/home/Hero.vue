@@ -57,7 +57,7 @@
   </div>
 
   <div class="w-full h-64 lg:w-1/2 lg:h-auto">
-    <div class="w-full h-full bg-cover" style="background-image: url(/img/about.jpg)">
+    <div class="w-full h-full bg-cover" style="background-image: url(~/assets/img/about.jpg)">
       <div class="w-full h-full bg-black opacity-25" />
     </div>
   </div>

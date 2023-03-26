@@ -46,7 +46,7 @@ export default defineNuxtConfig({
   //   prefix: "",
   // },
   image: {
-    domains: ['fakestoreapi.com'],
+    dir: '~/assets/img',
   },
   googleFonts: {
     families: {

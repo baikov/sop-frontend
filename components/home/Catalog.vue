@@ -17,7 +17,7 @@
           />
         </svg></span> -->
             <NuxtPicture
-              src="~/assets/img/truba-electrosvarnaya.png"
+              src="/img/truba-electrosvarnaya.png"
               sizes="sm:50px md:200px lg:200px"
               :img-attrs="{ class: 'object-cover' }"
             />
@@ -34,7 +34,7 @@
             class="p-10 flex flex-col items-center text-center group md:lg:xl:border-r md:lg:xl:border-b hover:bg-slate-50 cursor-pointer"
           >
             <NuxtPicture
-              src="~/assets/img/armatura.png"
+              src="/img/armatura.png"
               sizes="sm:50px md:200px lg:200px"
               :img-attrs="{ class: 'object-cover' }"
             />
@@ -45,7 +45,7 @@
 
           <div class="p-10 flex flex-col items-center text-center group   md:lg:xl:border-b hover:bg-slate-50 cursor-pointer">
             <NuxtPicture
-              src="~/assets/img/polosa-stalnaya.png"
+              src="/img/polosa-stalnaya.png"
               sizes="sm:50px md:200px lg:200px"
               :img-attrs="{ class: 'object-cover' }"
             />
@@ -56,7 +56,7 @@
 
           <div class="p-10 flex flex-col items-center text-center group   md:lg:xl:border-r hover:bg-slate-50 cursor-pointer">
             <NuxtPicture
-              src="~/assets/img/ppu.png"
+              src="/img/ppu.png"
               sizes="sm:50px md:200px lg:200px"
               :img-attrs="{ class: 'object-cover' }"
             />
@@ -67,7 +67,7 @@
 
           <div class="p-10 flex flex-col items-center text-center group    md:lg:xl:border-r hover:bg-slate-50 cursor-pointer">
             <NuxtPicture
-              src="~/assets/img/vus.png"
+              src="/img/vus.png"
               sizes="sm:50px md:200px lg:200px"
               :img-attrs="{ class: 'object-cover' }"
             />
@@ -78,7 +78,7 @@
 
           <div class="p-10 flex flex-col items-center text-center group     hover:bg-slate-50 cursor-pointer">
             <NuxtPicture
-              src="~/assets/img/ppm.png"
+              src="/img/ppm.png"
               sizes="sm:50px md:200px lg:200px"
               :img-attrs="{ class: 'object-cover' }"
             />

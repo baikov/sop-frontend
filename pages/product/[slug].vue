@@ -18,7 +18,7 @@ useServerSeoMeta({
   ogTitle: productDetail?.value?.name,
   description: productDetail?.value?.seo.seo_description,
   ogDescription: productDetail?.value?.seo.seo_description,
-  ogImage: '~/assets/img/truba_vodogazoprovodnaya_du_15kh2_8_detail.png',
+  ogImage: '/img/truba_vodogazoprovodnaya_du_15kh2_8_detail.png',
 })
 </script>
 
@@ -34,7 +34,7 @@ useServerSeoMeta({
     <div class="flex w-1/3 flex-col items-center justify-center p-4">
       <div class="rounded-lg shadow-md">
         <NuxtPicture
-          src="~/assets/img/truba_vodogazoprovodnaya_du_15kh2_8_detail.png"
+          src="/img/truba_vodogazoprovodnaya_du_15kh2_8_detail.png"
           sizes="sm:50px md:200px lg:400px"
           :alt="productDetail?.name"
           :title="productDetail?.seo.seo_title"

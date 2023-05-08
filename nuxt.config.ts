@@ -4,11 +4,11 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // apiSecret: '123',
     public: {
-      apiUrl: process.env.API_URL,
-      siteUrl: `https://${process.env.DOMAIN}`,
-      siteName: process.env.SITE_NAME,
+      apiUrl: process.env.API_URL || 'http://localhost:8000/api',
+      siteUrl: `https://${process.env.DOMAIN}` || 'http://site.ru',
+      siteName: process.env.SITE_NAME || 'Название сайта',
       language: 'ru-RU',
-      trailingSlash: true,
+      // trailingSlash: true,
     },
   },
   extends: [
@@ -53,9 +53,9 @@ export default defineNuxtConfig({
   // headlessui: {
   //   prefix: "",
   // },
-  image: {
-    dir: '~/assets/img',
-  },
+  // image: {
+  //   dir: 'assets/img',
+  // },
   googleFonts: {
     families: {
       Nunito: [100, 200, 300, 400, 500, 600, 700, 800, 900],

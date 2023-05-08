@@ -5,8 +5,15 @@ export default defineNuxtConfig({
     // apiSecret: '123',
     public: {
       apiUrl: process.env.API_URL,
+      siteUrl: `https://${process.env.DOMAIN}`,
+      siteName: process.env.SITE_NAME,
+      language: 'ru-RU',
+      trailingSlash: true,
     },
   },
+  extends: [
+    'nuxt-seo-kit',
+  ],
   components: true,
   ssr: true,
   typescript: {
@@ -21,6 +28,7 @@ export default defineNuxtConfig({
     'nuxt-vitest',
     '@nuxt/image-edge',
     '@nuxtjs/google-fonts',
+    '@unlighthouse/nuxt',
     // '@nuxtjs/tailwindcss',
     //   "nuxt-headlessui",
     //   "@pinia/nuxt",
@@ -52,6 +60,9 @@ export default defineNuxtConfig({
     families: {
       Nunito: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
+  },
+  linkChecker: {
+    failOn404: true,
   },
 //   tailwindcss: {
 //     config: {

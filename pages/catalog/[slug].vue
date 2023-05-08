@@ -8,6 +8,39 @@ if (detailCategory === null) {
   // look at https://github.com/mitre/saf-site-frontend/issues/89
   showError({ statusCode: 404, statusMessage: 'Page Not Found' })
 }
+// useHead({
+//   // title: detailCategory?.value?.seo.seo_title,
+//   // titleTemplate: '%s + Нижний Новгород',
+//   // meta: [
+//   //   { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+//   //   {
+//   //     hid: 'description',
+//   //     name: 'description',
+//   //     content: detailCategory?.value?.seo.seo_description,
+//   //   },
+//   // ],
+//   link: [
+//     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+//     { rel: 'canonical', href: `https://${import.meta.env.DOMAIN}${route.path}` },
+//   ],
+// })
+
+useServerSeoMeta({
+  charset: 'utf-8',
+  viewport: 'width=device-width, initial-scale=1',
+  title: detailCategory?.value?.seo.seo_title,
+  ogTitle: detailCategory?.value?.seo.seo_title,
+  description: detailCategory?.value?.seo.seo_description,
+  ogDescription: detailCategory?.value?.seo.seo_description,
+  ogImage: '',
+  robots: `${detailCategory?.value?.seo.is_index ? 'index' : 'noindex'}, ${
+    detailCategory?.value?.seo.is_follow ? 'follow' : 'nofollow'
+  }`,
+  ogUrl: `https://${process.env.DOMAIN}${route.path}`,
+  ogType: 'website',
+  ogSiteName: 'Soptorg.ru',
+
+})
 const productList = await getProductList(slug)
 </script>
 
@@ -16,7 +49,7 @@ const productList = await getProductList(slug)
     <PageBreadcrumbs :items="detailCategory?.breadcrumbs" />
     <div class="mx-auto w-full max-w-7xl p-4">
       <h1 class="my-2 text-2xl font-bold text-gray-800 md:text-3xl">
-        {{ detailCategory?.name }}
+        {{ detailCategory?.seo.h1 }}
       </h1>
     </div>
     <div class="mx-auto flex max-w-7xl gap-4 px-4">

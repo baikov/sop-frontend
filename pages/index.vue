@@ -28,17 +28,10 @@ useHead({
 </script>
 
 <template>
-  <!-- <section class="relative mx-auto flex h-full w-full flex-1 flex-col">
-    <div class="mx-auto w-full max-w-7xl p-4">
-      <h1 class="my-2 text-2xl font-bold text-gray-800 md:text-3xl">
-        Главная страница
-      </h1>
-    </div>
-  </section> -->
   <HomeHero />
   <!-- <HomeStats /> -->
   <HomeCatalog />
   <HomeAbout />
-  <HomeFeatures />
+  <!-- <HomeFeatures /> -->
   <!-- <HomePartners /> -->
 </template>

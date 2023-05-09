@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-const year = new Date().getFullYear().toString()
-const month = `0${(new Date().getMonth() + 1).toString().slice(-2)}`
+// const year = new Date().getFullYear().toString()
+// const month = `0${(new Date().getMonth() + 1).toString().slice(-2)}`
 </script>
 
 <template>
@@ -23,7 +23,7 @@ const month = `0${(new Date().getMonth() + 1).toString().slice(-2)}`
           info@soptorg.ru
         </NuxtLink>
       </div>
-      <div class="text-sm">
+      <!-- <div class="text-sm">
         <span>Актуальный прайс на {{ month }}.{{ year }}: </span>
         <NuxtLink
           to="#"
@@ -31,7 +31,7 @@ const month = `0${(new Date().getMonth() + 1).toString().slice(-2)}`
         >
           price.xlsx
         </NuxtLink>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

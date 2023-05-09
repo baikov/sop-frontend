@@ -24,6 +24,6 @@ useSchemaOrg([
     </div>
     <slot name="app-after" />
     <div id="app-after" />
-    <DebugHead />
+    <!-- <DebugHead /> -->
   </div>
 </template>

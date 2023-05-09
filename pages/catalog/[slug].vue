@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const { getCategory, getProductList } = useCategory()
 const route = useRoute()
+const config = useRuntimeConfig()
 const slug = route.params.slug.toString()
 const detailCategory = await getCategory(slug)
 
@@ -9,6 +10,35 @@ if (detailCategory === null) {
   showError({ statusCode: 404, statusMessage: 'Page Not Found' })
 }
 const productList = await getProductList(slug)
+
+useHead({
+  title: detailCategory?.value?.seo.seo_title,
+  titleTemplate: '%s',
+
+  meta: [
+    {
+      name: 'description',
+      content: detailCategory?.value?.seo.seo_description,
+    },
+    {
+      name: 'robots',
+      content: `${detailCategory?.value?.seo.is_index ? 'index' : 'noindex'}, ${
+        detailCategory?.value?.seo.is_follow ? 'follow' : 'nofollow'
+        }`,
+    },
+    {
+      property: 'og:site_name',
+      content: config.public.siteName,
+    },
+    {
+      property: 'og:url',
+      content: `${config.public.siteUrl}${route.path}`,
+    },
+  ],
+  link: [
+    { rel: 'canonical', href: `${config.public.siteUrl}${route.path}` },
+  ],
+})
 </script>
 
 <template>
@@ -16,7 +46,7 @@ const productList = await getProductList(slug)
     <PageBreadcrumbs :items="detailCategory?.breadcrumbs" />
     <div class="mx-auto w-full max-w-7xl p-4">
       <h1 class="my-2 text-2xl font-bold text-gray-800 md:text-3xl">
-        {{ detailCategory?.name }}
+        {{ detailCategory?.seo.h1 }}
       </h1>
     </div>
     <div class="mx-auto flex max-w-7xl gap-4 px-4">

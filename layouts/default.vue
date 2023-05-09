@@ -1,3 +1,13 @@
+<script lang="ts" setup>
+const config = useRuntimeConfig()
+useSchemaOrg([
+  defineWebSite({
+    name: config.public.siteName,
+  }),
+  defineWebPage(),
+])
+</script>
+
 <template>
   <div>
     <div class="flex min-h-screen flex-col">
@@ -14,5 +24,6 @@
     </div>
     <slot name="app-after" />
     <div id="app-after" />
+    <DebugHead />
   </div>
 </template>

@@ -14,7 +14,7 @@ const breadcrumbs = [
   {
     level: 1,
     name: 'О компании',
-    href: '/company/truby',
+    href: '/company',
     disabled: true,
   },
 ]

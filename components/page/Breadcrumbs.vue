@@ -1,8 +1,15 @@
 <script lang="ts" setup>
 import type { IBreadcrumb } from 'types'
-defineProps<{
+const breadcrumbs = defineProps<{
   items?: IBreadcrumb[]
 }>()
+const schema_breadcrumbs = breadcrumbs.items?.map(({ name, href }) => ({ name, item: href }))
+schema_breadcrumbs?.unshift({ name: 'Главная', item: '/' })
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: schema_breadcrumbs,
+  }),
+])
 </script>
 
 <template>

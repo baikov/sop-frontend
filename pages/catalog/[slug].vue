@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const { getCategory, getProductList } = useCategory()
 const route = useRoute()
+const config = useRuntimeConfig()
 const slug = route.params.slug.toString()
 const detailCategory = await getCategory(slug)
 
@@ -8,40 +9,36 @@ if (detailCategory === null) {
   // look at https://github.com/mitre/saf-site-frontend/issues/89
   showError({ statusCode: 404, statusMessage: 'Page Not Found' })
 }
-// useHead({
-//   // title: detailCategory?.value?.seo.seo_title,
-//   // titleTemplate: '%s + Нижний Новгород',
-//   // meta: [
-//   //   { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-//   //   {
-//   //     hid: 'description',
-//   //     name: 'description',
-//   //     content: detailCategory?.value?.seo.seo_description,
-//   //   },
-//   // ],
-//   link: [
-//     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-//     { rel: 'canonical', href: `https://${import.meta.env.DOMAIN}${route.path}` },
-//   ],
-// })
-
-useServerSeoMeta({
-  charset: 'utf-8',
-  viewport: 'width=device-width, initial-scale=1',
-  title: detailCategory?.value?.seo.seo_title,
-  ogTitle: detailCategory?.value?.seo.seo_title,
-  description: detailCategory?.value?.seo.seo_description,
-  ogDescription: detailCategory?.value?.seo.seo_description,
-  ogImage: '',
-  robots: `${detailCategory?.value?.seo.is_index ? 'index' : 'noindex'}, ${
-    detailCategory?.value?.seo.is_follow ? 'follow' : 'nofollow'
-  }`,
-  ogUrl: `https://${process.env.DOMAIN}${route.path}`,
-  ogType: 'website',
-  ogSiteName: 'Soptorg.ru',
-
-})
 const productList = await getProductList(slug)
+
+useHead({
+  title: detailCategory?.value?.seo.seo_title,
+  titleTemplate: '%s',
+
+  meta: [
+    {
+      name: 'description',
+      content: detailCategory?.value?.seo.seo_description,
+    },
+    {
+      name: 'robots',
+      content: `${detailCategory?.value?.seo.is_index ? 'index' : 'noindex'}, ${
+        detailCategory?.value?.seo.is_follow ? 'follow' : 'nofollow'
+        }`,
+    },
+    {
+      property: 'og:site_name',
+      content: config.public.siteName,
+    },
+    {
+      property: 'og:url',
+      content: `${config.public.siteUrl}${route.path}`,
+    },
+  ],
+  link: [
+    { rel: 'canonical', href: `${config.public.siteUrl}${route.path}` },
+  ],
+})
 </script>
 
 <template>

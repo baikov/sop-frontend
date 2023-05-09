@@ -1,16 +1,29 @@
 <script lang="ts" setup>
+const config = useRuntimeConfig()
 useHead({
   title: 'ООО "СПЕЦОПТТОРГ" - поставки стальной трубы, металлопроката, изоляции, опор для трубопроводов',
-  titleTemplate: '%s + Нижний Новгород',
+  titleTemplate: '%s',
   meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     {
-      hid: 'description',
       name: 'description',
       content: 'Широкий выбор стальной трубы, металлопроката, деталей для трубопровода. Услуги доставки.',
     },
+    {
+      name: 'robots',
+      content: 'index, follow',
+    },
+    {
+      property: 'og:site_name',
+      content: config.public.siteName,
+    },
+    {
+      property: 'og:url',
+      content: config.public.siteUrl,
+    },
   ],
-  link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  link: [
+    { rel: 'canonical', href: config.public.siteUrl },
+  ],
 })
 </script>
 

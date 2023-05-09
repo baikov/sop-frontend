@@ -1,19 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ],
+    },
+  },
   runtimeConfig: {
     // apiSecret: '123',
     public: {
+      siteUrl: `https://${process.env.DOMAIN}` || 'https://example.com',
       apiUrl: process.env.API_URL || 'http://localhost:8000/api',
-      siteUrl: `https://${process.env.DOMAIN}` || 'http://site.ru',
       siteName: process.env.SITE_NAME || 'Название сайта',
+      // titleSeparator: '|',
       language: 'ru-RU',
-      // trailingSlash: true,
     },
   },
-  extends: [
-    'nuxt-seo-kit',
-  ],
   components: true,
   ssr: true,
   typescript: {
@@ -28,7 +34,11 @@ export default defineNuxtConfig({
     'nuxt-vitest',
     '@nuxt/image-edge',
     '@nuxtjs/google-fonts',
-    '@unlighthouse/nuxt',
+    'nuxt-simple-sitemap',
+    'nuxt-simple-robots',
+    'nuxt-unhead',
+    'nuxt-schema-org',
+    // '@unlighthouse/nuxt',
     // '@nuxtjs/tailwindcss',
     //   "nuxt-headlessui",
     //   "@pinia/nuxt",
@@ -60,9 +70,6 @@ export default defineNuxtConfig({
     families: {
       Nunito: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
-  },
-  linkChecker: {
-    failOn404: true,
   },
 //   tailwindcss: {
 //     config: {

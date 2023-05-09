@@ -63,9 +63,9 @@ export default defineNuxtConfig({
   // headlessui: {
   //   prefix: "",
   // },
-  // image: {
-  //   dir: 'assets/img',
-  // },
+  image: {
+    dir: 'assets/img',
+  },
   googleFonts: {
     families: {
       Nunito: [100, 200, 300, 400, 500, 600, 700, 800, 900],

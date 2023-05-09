@@ -22,13 +22,7 @@ const breadcrumbs = [
 
 <template>
   <PageBreadcrumbs :items="breadcrumbs" />
-  <!-- <section class="relative mx-auto flex h-full w-full flex-col">
-    <div class="mx-auto w-full max-w-7xl p-4">
-      <h1 class="my-2 text-2xl font-bold text-gray-800 md:text-3xl">
-        Контакты
-      </h1>
-    </div>
-  </section> -->
+  <PageHeader h1="Контактная информация" />
 
   <!-- <section class="relative mx-auto flex h-full w-full flex-1 flex-col">
     <div class="mx-auto w-full max-w-7xl p-4">
@@ -135,29 +129,14 @@ const breadcrumbs = [
       </div>
     </div>
   </section> -->
-  <section class="bg-white dark:bg-gray-900">
+  <section class="relative mx-auto flex h-full w-full flex-1 flex-col">
     <div class="container px-4 py-12 mx-auto">
-      <div>
-        <p class="font-medium text-green-700 dark:text-green-400">
-          ООО "СПЕЦОПТТОРГ"
-        </p>
-
-        <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
-          Контактная информация
-        </h1>
-
-        <!-- <p class="mt-3 text-gray-500 dark:text-gray-400">
-          Our friendly team would love to hear from you.
-        </p> -->
-      </div>
-
       <div class="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-3">
         <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-1">
           <div>
-            <span class="inline-block p-3 text-green-700 rounded-full bg-green-100/80 dark:bg-gray-800">
+            <!-- <span class="inline-block p-3 text-green-700 rounded-full bg-green-100/80 dark:bg-gray-800">
               <Icon name="mdi:email" />
-            </span>
-
+            </span> -->
             <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">
               Email
             </h2>
@@ -170,10 +149,9 @@ const breadcrumbs = [
           </div>
 
           <div>
-            <span class="inline-block p-3 text-green-700 rounded-full bg-green-100/80 dark:bg-gray-800">
+            <!-- <span class="inline-block p-3 text-green-700 rounded-full bg-green-100/80 dark:bg-gray-800">
               <Icon name="mdi:map-marker" />
-            </span>
-
+            </span> -->
             <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">
               Адрес
             </h2>
@@ -186,10 +164,9 @@ const breadcrumbs = [
           </div>
 
           <div>
-            <span class="inline-block p-3 text-green-700 rounded-full bg-green-100/80 dark:bg-gray-800">
+            <!-- <span class="inline-block p-3 text-green-700 rounded-full bg-green-100/80 dark:bg-gray-800">
               <Icon name="mdi:phone" />
-            </span>
-
+            </span> -->
             <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">
               Телефон
             </h2>

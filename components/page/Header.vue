@@ -37,9 +37,9 @@ const mainMenu: MenuItem[] = [
       </div>
       <div class="flex flex-1 items-center justify-end md:flex-initial">
         <DarkToggle />
-        <span class="mx-4 h-6 w-px bg-gray-200 lg:mx-6" aria-hidden="true" />
+        <!-- <span class="mx-4 h-6 w-px bg-gray-200 lg:mx-6" aria-hidden="true" /> -->
         <!-- <Cart /> -->
-        <PopUp />
+        <!-- <PopUp /> -->
       </div>
       <div class="pl-4">
         <PageMobileMenu :menu="mainMenu" :catalog-menu="catalogMenu" />

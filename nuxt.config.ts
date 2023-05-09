@@ -34,10 +34,10 @@ export default defineNuxtConfig({
     'nuxt-vitest',
     '@nuxt/image-edge',
     '@nuxtjs/google-fonts',
-    'nuxt-simple-sitemap',
-    'nuxt-simple-robots',
-    'nuxt-unhead',
-    'nuxt-schema-org',
+    'nuxt-simple-sitemap', // https://github.com/harlan-zw/nuxt-simple-sitemap
+    'nuxt-simple-robots', // https://github.com/harlan-zw/nuxt-simple-robots
+    'nuxt-unhead', // https://github.com/unjs/unhead
+    'nuxt-schema-org', // https://github.com/harlan-zw/unhead-schema-org
     // '@unlighthouse/nuxt',
     // '@nuxtjs/tailwindcss',
     //   "nuxt-headlessui",

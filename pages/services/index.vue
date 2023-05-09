@@ -22,27 +22,11 @@ const breadcrumbs = [
 
 <template>
   <PageBreadcrumbs :items="breadcrumbs" />
-  <!-- <section class="relative mx-auto flex h-full w-full flex-col">
-    <div class="mx-auto w-full max-w-7xl p-4">
-      <h1 class="my-2 text-2xl font-bold text-gray-800 md:text-3xl">
-        Контакты
-      </h1>
-    </div>
-  </section> -->
-  <section class="relative mx-auto flex h-full w-full flex-col bg-white dark:bg-gray-900">
-    <div class="container w-full max-w-7xl px-4 py-10  mx-auto">
-      <h1 class="text-2xl font-semibold text-gray-800  lg:text-3xl dark:text-white">
-        Дополнительные услуги
-      </h1>
-
-      <div class="mt-2">
-        <span class="inline-block w-40 h-1 bg-green-700 rounded-full" />
-        <span class="inline-block w-3 h-1 ml-1 bg-green-700 rounded-full" />
-        <span class="inline-block w-1 h-1 ml-1 bg-green-700 rounded-full" />
-      </div>
-
-      <div class="mt-8 xl:mt-12 lg:flex lg:items-center">
-        <div class="grid w-full grid-cols-1 gap-8 lg:w-1/2 xl:gap-16 md:grid-cols-2">
+  <PageHeader h1="Услуги" />
+  <section class="relative mx-auto flex h-full w-full flex-col">
+    <div class="container w-full max-w-7xl px-4 py-4 mx-auto">
+      <div class="mt-8 lg:flex lg:items-center">
+        <div class="grid w-full grid-cols-1 gap-8 xl:gap-16 lg:grid-cols-4 md:grid-cols-2">
           <div class="space-y-3">
             <span class="inline-block p-3 text-green-700 bg-green-100 rounded-xl dark:text-white dark:bg-green-700">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -55,7 +39,12 @@ const breadcrumbs = [
             </h2>
 
             <p class="text-gray-500 dark:text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+              Мы предоставляем полный спектр транспортных услуг, связанных с доставкой
+              металлопроката по Нижнему Новгороду и области. Наша компания обладает собственным
+              автопарком, включающим в себя различные виды транспорта. Мы понимаем, что
+              один из самых важных аспектов при работе с металлопрокатом - это быстрая и
+              надежная доставка. Поэтому мы делаем все возможное, чтобы груз был доставлен в
+              срок и без задержек.
             </p>
           </div>
 
@@ -72,7 +61,9 @@ const breadcrumbs = [
             </h2>
 
             <p class="text-gray-500 dark:text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+              Мы предлагаем услуги резки металла на заказ с использованием современного оборудования и высококвалифицированных специалистов.
+              Мы используем только профессиональное оборудование, что позволяет обеспечивать точность и высокую скорость резки.
+              Если у вас есть какие-либо вопросы, наша команда готова ответить на них и предложить оптимальное решение.
             </p>
           </div>
 
@@ -88,7 +79,9 @@ const breadcrumbs = [
             </h2>
 
             <p class="text-gray-500 dark:text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+              Мы предлагаем профессиональные услуги по изоляции труб, которые обеспечивают надежную защиту трубопроводов от внешних воздействий и гарантируют сохранность транспортируемых по ним жидкостей и газов.
+              Используем только качественные материалы, которые обеспечивают долговечность и эффективность изоляции труб.
+              Гарантируем качественное выполнение работ, соблюдение сроков и доступные цены на услуги по изоляции труб.
             </p>
           </div>
 
@@ -104,14 +97,14 @@ const breadcrumbs = [
             </h2>
 
             <p class="text-gray-500 dark:text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
+              Мы предоставляем услуги по цинкованию, которые обеспечивают надежную защиту металла от коррозии и повышают его срок службы. Мы используем только качественные материалы, что позволяет гарантировать высокое качество цинкования и долговечность защитного покрытия.
             </p>
           </div>
         </div>
 
-        <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
+        <!-- <div class="hidden lg:flex lg:w-1/2 lg:justify-center">
           <img class="w-[28rem] h-[28rem] flex-shrink-0 object-cover xl:w-[34rem] xl:h-[34rem] rounded-md" src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
-        </div>
+        </div> -->
       </div>
     </div>
   </section>

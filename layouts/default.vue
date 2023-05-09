@@ -13,14 +13,14 @@ useSchemaOrg([
     <div class="flex min-h-screen flex-col">
       <PageTopBanner />
 
-      <PageHeader />
+      <Header />
 
       <slot name="breadcrumbs" />
       <div class="flex w-full flex-1 flex-col">
         <slot />
       </div>
 
-      <PageFooter />
+      <Footer />
     </div>
     <slot name="app-after" />
     <div id="app-after" />

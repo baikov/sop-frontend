@@ -28,7 +28,7 @@ const breadcrumbs = [
       <div class="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
         <div class="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <NuxtPicture
-            src="about.jpg"
+            src="/img/about.jpg"
             sizes="sm:300px md:600px lg:1000px"
             alt="О компании СПЕЦОПТТОРГ"
             title="О компании СПЕЦОПТТОРГ"

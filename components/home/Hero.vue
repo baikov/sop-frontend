@@ -33,7 +33,7 @@
     </div>
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
       <NuxtPicture
-        src="main-banner.jpg"
+        src="/img/main-banner.jpg"
         sizes="sm:550px md:1000px lg:900px"
         alt="СПЕЦОПТТОРГ"
         title="СПЕЦОПТТОРГ"

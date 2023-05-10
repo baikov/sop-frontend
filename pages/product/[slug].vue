@@ -18,7 +18,7 @@ useServerSeoMeta({
   ogTitle: productDetail?.value?.name,
   description: productDetail?.value?.seo.seo_description,
   ogDescription: productDetail?.value?.seo.seo_description,
-  ogImage: '~/assets/img/truba_vodogazoprovodnaya_du_15kh2_8_detail.png',
+  // ogImage: 'img/truba_vodogazoprovodnaya_du_15kh2_8_detail.png',
 })
 </script>
 

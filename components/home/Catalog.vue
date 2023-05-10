@@ -8,7 +8,7 @@
           >
             <NuxtLink to="/catalog/armatura-katanka" class="hover:underline">
               <NuxtPicture
-                src="categories/armatura.png"
+                src="/img/categories/armatura.png"
                 sizes="sm:50px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />
@@ -37,7 +37,7 @@
           >
             <NuxtLink to="/catalog/balki-dvutavr" class="hover:underline">
               <NuxtPicture
-                src="categories/balka.png"
+                src="/img/categories/balka.png"
                 sizes="sm:50px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />
@@ -55,12 +55,12 @@
           <div class="p-10 flex flex-col items-center text-center group md:lg:xl:border-b hover:bg-slate-50 cursor-pointer">
             <NuxtLink to="/catalog/vgp-elektrosvarnye-truby" class="hover:underline">
               <NuxtPicture
-                src="categories/truby-stalnie.png"
+                src="/img/categories/truby-stalnie.png"
                 sizes="sm:50px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />
               <p class="text-xl font-medium text-slate-700 mt-3">
-                Трубы стальные электросварные
+                Трубы стальные
               </p>
             </NuxtLink>
             <div class="mt-2 text-sm text-slate-500">
@@ -82,7 +82,7 @@
           <div class="p-10 flex flex-col items-center text-center group md:lg:xl:border-r hover:bg-slate-50 cursor-pointer">
             <NuxtLink to="/catalog/truby-elektrosvarnye-pryamougolnye" class="hover:underline">
               <NuxtPicture
-                src="categories/truby-profilnie.png"
+                src="/img/categories/truby-profilnie.png"
                 sizes="sm:50px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />
@@ -109,7 +109,7 @@
           <div class="p-10 flex flex-col items-center text-center group md:lg:xl:border-r hover:bg-slate-50 cursor-pointer">
             <NuxtLink to="/catalog/shveller" class="hover:underline">
               <NuxtPicture
-                src="categories/shveller.png"
+                src="/img/categories/shveller.png"
                 sizes="sm:50px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />
@@ -130,7 +130,7 @@
           <div class="p-10 flex flex-col items-center text-center group hover:bg-slate-50 cursor-pointer">
             <NuxtLink to="/catalog/ugolok" class="hover:underline">
               <NuxtPicture
-                src="categories/ugolok.png"
+                src="/img/categories/ugolok.png"
                 sizes="sm:50px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />

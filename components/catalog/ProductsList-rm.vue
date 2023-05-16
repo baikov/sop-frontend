@@ -9,7 +9,6 @@ defineProps<{
 <template>
   <div class="">
     <table class="table w-full">
-      <!-- head -->
       <thead>
         <tr>
           <th>Сортамент</th>
@@ -23,10 +22,10 @@ defineProps<{
       <tbody>
         <tr v-for="product in products.results" :key="product.id">
           <td>
-            <NuxtLink :to="`/product/${product.slug}`" class="hover:underline">
-              <!-- <NuxtLink :to="product.slug"> -->
+            <!-- <NuxtLink :to="`/product/${product.slug}`" class="hover:underline">
               {{ product.name }}
-            </NuxtLink>
+            </NuxtLink> -->
+            {{ product.name }}
           </td>
           <td v-for="prop in product.properties" :key="prop.code">
             {{ prop.value }}

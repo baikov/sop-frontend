@@ -57,6 +57,7 @@ interface IProduct {
   category: string
   description: string
   breadcrumbs: IBreadcrumb[]
+  in_stock: boolean
 }
 interface IProductList {
   limit: number

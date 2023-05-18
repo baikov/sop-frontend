@@ -42,10 +42,10 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-col w-full flex-1">
     <PageBreadcrumbs :items="detailCategory?.breadcrumbs" />
-    <PageHeader :h1="detailCategory?.seo.h1" />
-    <div class="mx-auto flex max-w-7xl gap-4 px-4">
+    <PageHeader :h1="detailCategory?.seo.h1 || detailCategory?.name" />
+    <div class="mx-auto flex max-w-7xl gap-4 px-4 flex-1 w-full">
       <div class="hidden flex-col md:flex md:w-4/12 lg:w-3/12">
         <CatalogSidebar />
       </div>

@@ -2,14 +2,14 @@
   <section class="relative mx-auto flex h-full w-full flex-1 flex-col" style="background-image: url('');">
     <div class="mx-auto w-full max-w-7xl px-4 py-10">
       <div class="bg-opacity-10">
-        <div class="grid grid-cols-1 md:lg:xl:grid-cols-3 group bg-white dark:bg-gray-300 border ">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:xl:grid-cols-3 group bg-white dark:bg-gray-300 border ">
           <div
             class="p-10 flex flex-col items-center text-center group md:lg:xl:border-r md:lg:xl:border-b hover:bg-slate-50 cursor-pointer"
           >
             <NuxtLink to="/catalog/armatura-katanka" class="hover:underline">
               <NuxtPicture
-                src="/img/categories/armatura.png"
-                sizes="sm:50px md:200px lg:200px"
+                src="/img/categories/armatura-riflenaya.png"
+                sizes="sm:200px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />
               <p class="text-xl font-medium text-slate-700 mt-3">
@@ -37,8 +37,8 @@
           >
             <NuxtLink to="/catalog/balki-dvutavr" class="hover:underline">
               <NuxtPicture
-                src="/img/categories/balka.png"
-                sizes="sm:50px md:200px lg:200px"
+                src="/img/categories/balka-dvutavr.png"
+                sizes="sm:200px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />
               <p class="text-xl font-medium text-slate-700 mt-3">
@@ -55,8 +55,8 @@
           <div class="p-10 flex flex-col items-center text-center group md:lg:xl:border-b hover:bg-slate-50 cursor-pointer">
             <NuxtLink to="/catalog/vgp-elektrosvarnye-truby" class="hover:underline">
               <NuxtPicture
-                src="/img/categories/truby-stalnie.png"
-                sizes="sm:50px md:200px lg:200px"
+                src="/img/categories/truby-kruglie.png"
+                sizes="sm:200px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />
               <p class="text-xl font-medium text-slate-700 mt-3">
@@ -83,7 +83,7 @@
             <NuxtLink to="/catalog/truby-elektrosvarnye-pryamougolnye" class="hover:underline">
               <NuxtPicture
                 src="/img/categories/truby-profilnie.png"
-                sizes="sm:50px md:200px lg:200px"
+                sizes="sm:200px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />
               <p class="text-xl font-medium text-slate-700 mt-3">
@@ -110,7 +110,7 @@
             <NuxtLink to="/catalog/shveller" class="hover:underline">
               <NuxtPicture
                 src="/img/categories/shveller.png"
-                sizes="sm:50px md:200px lg:200px"
+                sizes="sm:200px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />
               <p class="text-xl font-medium text-slate-700 mt-3">
@@ -131,7 +131,7 @@
             <NuxtLink to="/catalog/ugolok" class="hover:underline">
               <NuxtPicture
                 src="/img/categories/ugolok.png"
-                sizes="sm:50px md:200px lg:200px"
+                sizes="sm:200px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />
               <p class="text-xl font-medium text-slate-700 mt-3">

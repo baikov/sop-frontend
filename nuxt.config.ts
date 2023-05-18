@@ -38,14 +38,14 @@ export default defineNuxtConfig({
     'nuxt-simple-robots', // https://github.com/harlan-zw/nuxt-simple-robots
     'nuxt-unhead', // https://github.com/unjs/unhead
     'nuxt-schema-org', // https://github.com/harlan-zw/unhead-schema-org
+    'nuxt-headlessui',
     // '@unlighthouse/nuxt',
     // '@nuxtjs/tailwindcss',
-    //   "nuxt-headlessui",
     //   "@pinia/nuxt",
   ],
-  experimental: {
-    reactivityTransform: true,
-  },
+  // experimental: {
+  //   reactivityTransform: true,
+  // },
   css: ['@/assets/css/main.css'],
   postcss: {
     plugins: {

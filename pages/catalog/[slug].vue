@@ -50,15 +50,11 @@ useHead({
         <CatalogSidebar />
       </div>
       <div class="w-full md:w-8/12 lg:w-9/12">
-        <!-- <CatalogSubcategories :subcat-list=""/> -->
+        <CatalogSubcategories :subcat-list="detailCategory?.subcategories" />
         <div class="">
           {{ detailCategory?.description }}
         </div>
         <div v-if="productList && detailCategory?.product_properties">
-          <!-- <CatalogProductsList
-            :products="productList"
-            :product-properties="detailCategory?.product_properties"
-          /> -->
           <CatalogProductTable
             :products="productList"
             :product-properties="detailCategory?.product_properties"

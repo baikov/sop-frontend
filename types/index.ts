@@ -22,7 +22,7 @@ interface Category {
   id: number
   name: string
   slug: string
-  parents: string[]
+  // parents: string[]
   description: string
 }
 interface IProductProperty {
@@ -41,6 +41,7 @@ interface ICategoryDetail {
   description: string
   breadcrumbs: IBreadcrumb[]
   product_properties: IProductProperty[]
+  subcategories: Category[] | []
 }
 interface IProductPropertyValue extends IProductProperty {
   value: string
@@ -68,6 +69,10 @@ interface IProductList {
   results: IProduct[]
 }
 
+interface IconMap {
+  [key: string]: string
+}
+
 export {
   MenuItem,
   Category,
@@ -77,4 +82,5 @@ export {
   IProductList,
   IProductProperty,
   IProductPropertyValue,
+  IconMap,
 }

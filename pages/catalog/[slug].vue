@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+// import { onMounted } from 'vue'
 const { getCategory, getProductList } = useCategory()
 const route = useRoute()
 const config = useRuntimeConfig()
@@ -9,6 +10,7 @@ if (detailCategory === null) {
   // look at https://github.com/mitre/saf-site-frontend/issues/89
   showError({ statusCode: 404, statusMessage: 'Page Not Found' })
 }
+
 const productList = await getProductList(slug)
 
 useHead({
@@ -54,6 +56,7 @@ useHead({
         <div class="">
           {{ detailCategory?.description }}
         </div>
+
         <div v-if="productList && detailCategory?.product_properties">
           <CatalogProductTable
             :products="productList"

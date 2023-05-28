@@ -4,6 +4,7 @@ defineProps<{
   products: IProductList
   productProperties: IProductProperty[]
 }>()
+// const pageLimit = useState('limit', () => 0)
 </script>
 
 <template>
@@ -21,6 +22,64 @@ defineProps<{
         <!-- <p class="mt-1 text-sm text-gray-500 dark:text-gray-300">
           Тут че-то написано
         </p> -->
+        <!-- Выбор количества продуктов на странице -->
+        <!-- <div class="container mx-auto">
+          <div class="w-72">
+            <HeadlessListbox v-model="pageLimit">
+              <div class="relative mt-1">
+                <HeadlessListboxButton
+                  class="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
+                >
+                  <span class="block truncate">{{ pageLimit }}</span>
+                  <span
+                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
+                  >
+                    <Icon
+                      name="mdi:chevron-down"
+                      class="h-5 w-5 text-gray-400"
+                      aria-hidden="true"
+                    />
+                  </span>
+                </HeadlessListboxButton>
+                <transition
+                  leave-active-class="transition duration-100 ease-in"
+                  leave-from-class="opacity-100"
+                  leave-to-class="opacity-0"
+                >
+                  <HeadlessListboxOptions
+                    class="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+                  >
+                    <HeadlessListboxOption
+                      v-for="number in [20, 50, 100]"
+                      v-slot="{ active, selected }"
+                      :key="number"
+                      :value="number"
+                      as="template"
+                    >
+                      <li
+                        class="relative cursor-default select-none py-2 pl-10 pr-4" :class="[
+                          active ? 'bg-amber-100 text-amber-900' : 'text-gray-900',
+                        ]"
+                      >
+                        <span
+                          class="block truncate" :class="[
+                            selected ? 'font-medium' : 'font-normal',
+                          ]"
+                        >{{ number }}</span>
+                        <span
+                          v-if="selected"
+                          class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"
+                        >
+                          <Icon name="mdi:check" class="h-5 w-5" aria-hidden="true" />
+                        </span>
+                      </li>
+                    </HeadlessListboxOption>
+                  </HeadlessListboxOptions>
+                </transition>
+              </div>
+            </HeadlessListbox>
+          </div>
+        </div> -->
       </div>
 
       <!-- <div class="flex items-center mt-4 gap-x-3">
@@ -147,50 +206,6 @@ defineProps<{
       </div>
     </div>
 
-    <!-- <div class="flex items-center justify-between mt-6">
-      <NuxtLink to="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
-        </svg>
-
-        <span>
-          previous
-        </span>
-      </NuxtLink>
-
-      <div class="items-center hidden md:flex gap-x-3">
-        <NuxtLink to="#" class="px-2 py-1 text-sm text-blue-500 rounded-md dark:bg-gray-800 bg-blue-100/60">
-          1
-        </NuxtLink>
-        <NuxtLink to="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">
-          2
-        </NuxtLink>
-        <NuxtLink to="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">
-          3
-        </NuxtLink>
-        <NuxtLink to="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">
-          ...
-        </NuxtLink>
-        <NuxtLink to="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">
-          12
-        </NuxtLink>
-        <NuxtLink to="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">
-          13
-        </NuxtLink>
-        <NuxtLink to="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">
-          14
-        </NuxtLink>
-      </div>
-
-      <NuxtLink to="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
-        <span>
-          Next
-        </span>
-
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-        </svg>
-      </NuxtLink>
-    </div> -->
+    <CatalogPagination :next="products.next" :previous="products.previous" :limit="products.limit" :offset="products.offset" :count="products.count" />
   </section>
 </template>

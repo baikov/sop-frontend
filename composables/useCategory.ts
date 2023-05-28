@@ -31,6 +31,16 @@ import type { Category, ICategoryDetail, IProductList } from 'types'
 
 export const useCategory = () => {
   const config = useRuntimeConfig()
+  const pageLimit = useState('limit', () => 0)
+  const pageOffset = useState('offset', () => 0)
+  const defaultProductList: IProductList = {
+    limit: 10,
+    offset: 0,
+    count: 0,
+    next: null,
+    previous: null,
+    results: [],
+  }
 
   const getCategryList = async () => {
     try {
@@ -73,21 +83,35 @@ export const useCategory = () => {
       // console.log(e)
     }
   }
+  // const getProductList = async (slug: string): Promise<IProductList> => {
+  //   try {
+  //     const { data: productList } = await useFetch<IProductList>(
+  //         `${config.public.apiUrl}/categories/${slug}/products/`, {
+  //           query: { limit: pageLimit, offset: pageOffset },
+  //           // query: { offset: pageOffset },
+  //         },
+  //     )
+  //     // const data = await $fetch<IProductList>(
+  //     //   `${config.public.apiUrl}/categories/${slug}/products/`
+  //     // );
+  //     // return data as IProductList
+
+  //     return productList
+  //   }
+  //   catch (e) {
+  //     return defaultProductList
+  //   }
+  // }
   const getProductList = async (slug: string) => {
-    try {
-      const { data: productList } = await useFetch<IProductList>(
-        `${config.public.apiUrl}/categories/${slug}/products/`,
-      )
-      // const data = await $fetch<IProductList>(
-      //   `${config.public.apiUrl}/categories/${slug}/products/`
-      // );
-      // return data as IProductList;
-      return productList
-    }
-    catch (e) {
-      // console.log(e)
-    }
+    const { data: productList } = await useFetch<IProductList>(
+      `${config.public.apiUrl}/categories/${slug}/products/`,
+      {
+        query: { limit: pageLimit, offset: pageOffset },
+        // watch: [pageLimit, pageOffset],
+      },
+    )
+    return productList || defaultProductList
   }
 
-  return { getCategryList, getCategory, getProductList, getRootCategories }
+  return { getCategryList, getCategory, getProductList, getRootCategories, pageLimit, pageOffset }
 }

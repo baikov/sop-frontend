@@ -16,9 +16,11 @@ if (props.limit !== 0)
   pagesCount.value = Math.ceil(props.count / props.limit)
 const goNext = () => {
   pageOffset.value += props.limit || 20
+  currentPage.value += 1
 }
 const goPrevious = () => {
   pageOffset.value -= props.limit || 20
+  currentPage.value -= 1
 }
 const changePage = (page: number) => {
   pageOffset.value = (page - 1) * props.limit

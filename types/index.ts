@@ -3,6 +3,7 @@ interface MenuItem {
   name: string
   depth: number
   slug: string
+  image: string | null
   submenu: MenuItem[] | []
 }
 interface IBreadcrumb {
@@ -22,6 +23,7 @@ interface Category {
   id: number
   name: string
   slug: string
+  image: string | null
   // parents: string[]
   description: string
 }

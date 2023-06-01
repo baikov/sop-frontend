@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { IconMap, MenuItem } from 'types'
+import type { MenuItem } from 'types'
 const props = defineProps<{
   menu?: MenuItem[] | null
 }>()
@@ -34,20 +34,6 @@ function findParentSlug(items: MenuItem[] | null | undefined, slug: string): str
 }
 
 const parentSlug = findParentSlug(props.menu, slug)
-
-const icons: IconMap = {
-  'truby': 'truby',
-  'listovoi-prokat': 'listovoy-prokat',
-  'sortovoi-prokat': 'sortovoy-prokat',
-  'armatura-katanka': 'armatura-riflenaya',
-  'balka-dvutavr-stalnaya': 'balka-dvutavr',
-  'polosa-kvadrat': 'polosa',
-  'ugolok': 'ugolok',
-  'shveller-stalnoi': 'shveller',
-  'truba-kruglaya': 'truby-kruglie',
-  'truby-profilnie': 'truby-profilnie',
-
-}
 </script>
 
 <template>
@@ -55,9 +41,9 @@ const icons: IconMap = {
     <template v-for="item in menu" :key="item.id">
       <NuxtLink
         :to="`/catalog/${item.slug}`"
-        class="flex items-center gap-2 px-4 py-2 text-gray-700"
+        class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-green-100 hover:text-green-700"
       >
-        <NuxtImg v-if="item.slug in icons" :src="`/img/categories/${icons[item.slug]}.png`" width="60" height="40" loading="lazy" />
+        <NuxtImg v-show="item.image" :src="`/soptorg/media/${item.image}`" width="60" height="30" />
         <span class="text-md font-medium">{{ item.name }}</span>
       </NuxtLink>
 
@@ -65,17 +51,20 @@ const icons: IconMap = {
         <template v-for="subitem in item.submenu" :key="subitem.id">
           <details class="group [&_summary::-webkit-details-marker]:hidden" :open="subitem.slug === parentSlug || subitem.slug === slug">
             <summary
-              class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+              class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-green-100 hover:text-green-700"
+              :class="{ 'bg-green-100 text-green-700': slug === subitem.slug }"
             >
-              <div class="flex items-center gap-2">
-                <!-- <Icon name="TrubiIcon" class="h-10 w-10 text-green-700" /> -->
-                <NuxtImg v-if="subitem.slug in icons" :src="`/img/categories/${icons[subitem.slug]}.png`" width="36" height="24" loading="lazy" />
-                <NuxtLink :to="`/catalog/${subitem.slug}`">
-                  <span class="text-sm font-medium">{{ subitem.name }}</span>
-                </NuxtLink>
-              </div>
+              <!-- <div class="flex items-center gap-2"> -->
+              <NuxtLink
+                :to="`/catalog/${subitem.slug}`"
+                class="flex items-center gap-2 px-4 py-2 text-gray-700 hover:bg-green-100 hover:text-green-700"
+              >
+                <NuxtImg v-show="subitem.image" :src="`/soptorg/media/${subitem.image}`" width="40" height="20" />
+                <span class="text-sm font-medium">{{ subitem.name }}</span>
+              </NuxtLink>
+              <!-- </div> -->
 
-              <span class="shrink-0 transition duration-300 group-open:-rotate-180">
+              <span v-show="subitem.submenu && subitem.submenu.length" class="shrink-0 transition duration-300 group-open:-rotate-180">
                 <Icon name="mdi:chevron-down" class="h-5 w-5" />
               </span>
             </summary>
@@ -84,10 +73,10 @@ const icons: IconMap = {
               <template v-for="lv3 in subitem.submenu" :key="lv3.id">
                 <NuxtLink
                   :to="`/catalog/${lv3.slug}`"
-                  active-class="underline"
-                  class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700"
+                  active-class="bg-green-100 text-green-700"
+                  class="flex items-center gap-2 rounded-lg px-4 py-2 text-gray-500 hover:bg-green-100 hover:text-green-700"
                 >
-                  <Icon name="mdi:circle" class="h-2 w-2" />
+                  <Icon name="mdi:circle" class="h-1.5 w-1.5 min-w-[0.375rem]" />
                   <span class="text-sm font-medium"> {{ lv3.name }} </span>
                 </NuxtLink>
               </template>

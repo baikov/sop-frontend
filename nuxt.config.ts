@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // apiSecret: '123',
     public: {
-      siteUrl: `https://${process.env.DOMAIN}` || 'https://example.com',
+      siteUrl: process.env.NODE_ENV === 'production' ? `https://${process.env.DOMAIN}` : `http://${process.env.DOMAIN}`,
       apiUrl: process.env.API_URL || 'http://localhost:8000/api',
       siteName: process.env.SITE_NAME || 'Название сайта',
       // titleSeparator: '|',
@@ -63,9 +63,13 @@ export default defineNuxtConfig({
   // headlessui: {
   //   prefix: "",
   // },
-  // image: {
-  //   dir: 'assets/img',
-  // },
+  image: {
+    // dir: 'assets/img',
+    domains: [process.env.NODE_ENV === 'production' ? `${process.env.DOMAIN}` : '127.0.0.1:8000'],
+    alias: {
+      soptorg: process.env.NODE_ENV === 'production' ? `https://${process.env.DOMAIN}` : 'http://127.0.0.1:8000',
+    },
+  },
   googleFonts: {
     families: {
       Nunito: [100, 200, 300, 400, 500, 600, 700, 800, 900],

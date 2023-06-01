@@ -37,7 +37,7 @@
           >
             <NuxtLink to="/catalog/balki-dvutavr" class="hover:underline">
               <NuxtPicture
-                src="/img/categories/balka-dvutavr.png"
+                src="/img/categories/balka.png"
                 sizes="sm:200px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />
@@ -55,7 +55,7 @@
           <div class="p-10 flex flex-col items-center text-center group md:lg:xl:border-b hover:bg-slate-50 cursor-pointer">
             <NuxtLink to="/catalog/vgp-elektrosvarnye-truby" class="hover:underline">
               <NuxtPicture
-                src="/img/categories/truby-kruglie.png"
+                src="/img/categories/trubnij-prokat.png"
                 sizes="sm:200px md:200px lg:200px"
                 :img-attrs="{ class: 'object-cover' }"
               />

@@ -39,6 +39,7 @@ export default defineNuxtConfig({
     'nuxt-unhead', // https://github.com/unjs/unhead
     'nuxt-schema-org', // https://github.com/harlan-zw/unhead-schema-org
     'nuxt-headlessui',
+    '@artmizu/yandex-metrika-nuxt',
     // '@unlighthouse/nuxt',
     // '@nuxtjs/tailwindcss',
     //   "@pinia/nuxt",
@@ -74,6 +75,9 @@ export default defineNuxtConfig({
     families: {
       Nunito: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
+  },
+  yandexMetrika: {
+    id: process.env.YANDEX_METRIKA_ID,
   },
 //   tailwindcss: {
 //     config: {

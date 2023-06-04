@@ -4,7 +4,6 @@ defineProps<{
   products: IProductList
   productProperties: IProductProperty[]
 }>()
-// const pageLimit = useState('limit', () => 0)
 </script>
 
 <template>
@@ -112,7 +111,7 @@ defineProps<{
         <input type="text" placeholder="Поиск" class="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40">
       </div>
     </div> -->
-
+    <CatalogPagination :next="products.next" :previous="products.previous" :limit="products.limit" :offset="products.offset" :count="products.count" />
     <div class="flex flex-col mt-6">
       <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
@@ -152,9 +151,17 @@ defineProps<{
                       </p> -->
                     </div>
                   </td>
-                  <td v-for="prop in product.properties" :key="prop.code" class="px-4 py-4 text-sm whitespace-nowrap">
-                    {{ prop.value }}
-                  </td>
+                  <!-- Выводим только свойства, которые выбраны у категории -->
+                  <template v-for="prop in productProperties" :key="prop.code">
+                    <td :id="prop.code" class="px-4 py-4 text-sm whitespace-nowrap">
+                      <template v-for="prod_prop in product.properties" :key="prod_prop.code">
+                        <span v-if="prod_prop.code === prop.code" :id="prod_prop.code">
+                          {{ prod_prop.value }}
+                        </span>
+                      </template>
+                    </td>
+                  </template>
+
                   <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">
                     <!-- <div class="relative flex items-center p-2 text-sm">
                       <span>{{ product.ton_price_with_coef }}</span>

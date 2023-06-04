@@ -90,6 +90,15 @@
   resolved "https://registry.yarnpkg.com/@antfu/utils/-/utils-0.7.2.tgz#3bb6f37a6b188056fe9e2f363b6aa735ed65d7ca"
   integrity sha512-vy9fM3pIxZmX07dL+VX1aZe7ynZ+YyB0jY+jE6r3hOK6GNY2t6W8rzpFC4tgpbXUYABkFQwgJq2XYXlxbXAI0g==
 
+"@artmizu/yandex-metrika-nuxt@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@artmizu/yandex-metrika-nuxt/-/yandex-metrika-nuxt-1.0.1.tgz#328a62de1436cc8c2cafafff934bf913104f74ce"
+  integrity sha512-mzVJeXGJynnRqDbcL88kiIipE4lIQqregWVLGXefKA081qAMpUoxcIfYCu6HyDlT25itwRmQC+fOBbtpd0svow==
+  dependencies:
+    "@nuxt/kit" "^3.3.1"
+    consola "^2.15.3"
+    defu "^6.1.2"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.18.6", "@babel/code-frame@^7.21.4":
   version "7.21.4"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.21.4.tgz#d0fa9e4413aca81f2b23b9442797bda1826edb39"

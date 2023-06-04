@@ -4,6 +4,9 @@ defineProps<{
   products: IProductList
   productProperties: IProductProperty[]
 }>()
+// const ctx = useNuxtApp()
+// if (process.client)
+//   ctx.$metrika.reachGoal('zzz')
 </script>
 
 <template>

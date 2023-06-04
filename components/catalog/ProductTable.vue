@@ -194,8 +194,10 @@ defineProps<{
                     <!-- <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
                       В наличии
                     </div> -->
-                    <Icon v-if="product.in_stock" name="mdi:check" class="h-6 w-6 text-green-700" />
-                    <Icon v-else name="mdi:close" class="h-6 w-6 text-red-700" />
+                    <span v-if="product.in_stock" class="text-green-700">На складе</span>
+                    <span v-else class="text-yellow-700">Под заказ</span>
+                    <!-- <Icon v-if="product.in_stock" name="mdi:check" class="h-6 w-6 text-green-700" />
+                    <Icon v-else name="mdi:close" class="h-6 w-6 text-red-700" /> -->
                   </td>
                   <!-- <td class="px-4 py-4 text-sm whitespace-nowrap">
                     <NuxtLink to="#">

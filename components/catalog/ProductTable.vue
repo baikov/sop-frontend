@@ -18,7 +18,9 @@ defineProps<{
             Список продукции
           </h2>
 
-          <span class="px-3 py-1 text-xs text-green-600 bg-green-100 rounded-full dark:bg-gray-800 dark:text-green-400">{{ products.count }} позиций</span>
+          <span class="px-3 py-1 text-xs text-green-700 bg-green-100 rounded-full dark:bg-gray-900 dark:text-zinc-200">
+            {{ products.count }} позиций
+          </span>
         </div>
 
         <!-- <p class="mt-1 text-sm text-gray-500 dark:text-gray-300">
@@ -120,24 +122,24 @@ defineProps<{
         <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
           <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-              <thead class="bg-gray-50 dark:bg-gray-800">
+              <thead class="bg-gray-50 dark:bg-gray-800 text-zinc-900 dark:text-zinc-200 font-bold text-sm text-left">
                 <tr>
-                  <th scope="col" class="py-4 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                  <th scope="col" class="py-4 px-4">
                     <!-- <button class="flex items-center gap-x-3 focus:outline-none">
                       <span>Сортамент</span>
                       <Icon name="mdi:filter" class="w-4 h-4" />
                     </button> -->
                     Сортамент
                   </th>
-                  <th v-for="property in productProperties" :key="property.id" scope="col" class="px-4 py-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                  <th v-for="property in productProperties" :key="property.id" scope="col" class="px-4 py-4">
                     {{ property.name }}
                   </th>
 
-                  <th scope="col" class="px-4 py-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                  <th scope="col" class="px-4 py-4">
                     Цена
                   </th>
 
-                  <th scope="col" class="px-4 py-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                  <th scope="col" class="px-4 py-4">
                     Наличие
                   </th>
                 </tr>
@@ -197,8 +199,8 @@ defineProps<{
                     <!-- <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
                       В наличии
                     </div> -->
-                    <span v-if="product.in_stock" class="text-green-700">На складе</span>
-                    <span v-else class="text-yellow-700">Под заказ</span>
+                    <span v-if="product.in_stock" class="text-green-700 dark:text-green-500">На складе</span>
+                    <span v-else class="text-yellow-700 dark:text-yellow-500">Под заказ</span>
                     <!-- <Icon v-if="product.in_stock" name="mdi:check" class="h-6 w-6 text-green-700" />
                     <Icon v-else name="mdi:close" class="h-6 w-6 text-red-700" /> -->
                   </td>

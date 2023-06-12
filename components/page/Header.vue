@@ -11,9 +11,9 @@ defineProps<{
         {{ h1 }}
       </h1>
       <div class="mt-2">
-        <span class="inline-block w-40 h-1 bg-green-700 rounded-full" />
-        <span class="inline-block w-3 h-1 ml-1 bg-green-700 rounded-full" />
-        <span class="inline-block w-1 h-1 ml-1 bg-green-700 rounded-full" />
+        <span class="inline-block w-40 h-1 bg-green-700 rounded-full dark:bg-zinc-200" />
+        <span class="inline-block w-3 h-1 ml-1 bg-green-700 rounded-full dark:bg-zinc-200" />
+        <span class="inline-block w-1 h-1 ml-1 bg-green-700 rounded-full dark:bg-zinc-200" />
       </div>
     </div>
   </section>

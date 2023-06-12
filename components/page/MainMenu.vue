@@ -16,7 +16,7 @@ const props = defineProps<Props>()
     <NuxtLink to="/catalog" active-class="underline">
       Каталог
     </NuxtLink>
-    <div class="absolute top-full right-0 hidden bg-gray-700 group-hover:block">
+    <div class="absolute top-full right-0 hidden bg-gray-700 dark:bg-gray-900 group-hover:block group-hover:touch-auto">
       <div
         v-for="item in props.catalogMenu"
         :key="item.id"
@@ -31,7 +31,7 @@ const props = defineProps<Props>()
           {{ item.name }}
         </NuxtLink>
         <div
-          class="absolute top-0 left-full hidden bg-gray-700 group-hover/level2:block"
+          class="absolute top-0 left-full hidden bg-gray-700 dark:bg-gray-900 group-hover/level2:block"
         >
           <NuxtLink
             v-for="subitem in item.submenu"
@@ -94,14 +94,14 @@ const props = defineProps<Props>()
     </NuxtLink>
     <div
       v-if="item.submenu"
-      class="absolute top-full right-0 hidden bg-gray-700 group-hover:block"
+      class="absolute top-full right-0 hidden bg-gray-700 dark:bg-gray-900 group-hover:block"
     >
       <NuxtLink
         v-for="subitem in item.submenu"
         :key="subitem.id"
         :to="`/${item.slug}/${subitem.slug}`"
         active-class="underline"
-        class="block cursor-pointer whitespace-nowrap py-2 px-4 transition-colors ease-in-out hover:bg-white/10"
+        class="block cursor-pointer whitespace-nowrap py-2 px-4 transition-colors dark:bg-gray-900 ease-in-out hover:bg-white/10"
       >
         {{ subitem.name }}
       </NuxtLink>

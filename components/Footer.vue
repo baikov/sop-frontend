@@ -14,11 +14,11 @@ const year = new Date().getFullYear()
         <span>Оптовые поставки металлопроката © {{ year }}</span>
       </div>
       <div class="flex flex-col items-center gap-2 sm:float-right sm:flex-row">
-        <NuxtLink to="https://baikov.dev" class="text-sm font-semibold">
-          baikov<span class="text-red-500">.dev</span>
+        <NuxtLink to="https://baikov.dev" class="text-sm font-bold">
+          baikov<span class="text-red-500 dark:text-zinc-200 font-bold">.dev</span>
         </NuxtLink>
-        <span class="block rounded bg-blue-500 px-1 py-0.5 text-xs text-white">
-          v0.3
+        <span class="block rounded bg-blue-500 dark:bg-zinc-200 dark:text-gray-900 px-1 py-0.5 text-xs text-white">
+          v0.8
         </span>
       </div>
     </div>

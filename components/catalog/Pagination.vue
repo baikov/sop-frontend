@@ -34,7 +34,10 @@ onMounted(() => {
 
 <template>
   <div class="flex items-center justify-between py-4 mx-auto">
-    <button :disabled="previous === null" class="disabled:opacity-50 flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800" @click="goPrevious()">
+    <button
+      :disabled="previous === null"
+      class="disabled:opacity-50 flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800" @click="goPrevious()"
+    >
       <Icon name="mdi:chevron-left" class="w-5 h-5 rtl:-scale-x-100" />
       <span>
         Предыдущая
@@ -45,7 +48,7 @@ onMounted(() => {
       <button
         v-for="number in pagesCount"
         :key="number"
-        class="px-2 py-1 text-sm text-green-500 rounded-md dark:bg-gray-800 bg-blue-100/60"
+        class="px-2 py-1 text-sm text-green-500 rounded-md dark:bg-gray-800 dark:text-zinc-200 bg-blue-100/60"
         :class="[number === currentPage ? 'bg-green-100' : 'bg-white']"
         @click="changePage(number)"
       >

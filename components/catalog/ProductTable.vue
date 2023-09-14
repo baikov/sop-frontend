@@ -181,18 +181,31 @@ defineProps<{
                         </div>
                       </div>
                     </div> -->
-                    <div>
-                      <span class="font-bold">{{ product.ton_price_with_coef }} ₽/тн</span>
-                      <p v-if="product.meter_price_with_coef" class="text-xs font-normal text-gray-600 dark:text-gray-400">
+                    <div v-if="product.ton_price_with_coef || product.meter_price_with_coef || product.unit_price_with_coef">
+                      <span v-show="product.ton_price_with_coef" class="font-bold">
+                        {{ `${product.ton_price_with_coef} ₽/тн` }}
+                      </span>
+                      <span v-show="!product.ton_price_with_coef && product.unit_price_with_coef" class="font-bold">
+                        {{ `${product.unit_price_with_coef} ₽/шт` }}
+                      </span>
+                      <span v-show="!product.ton_price_with_coef && product.meter_price_with_coef" class="font-bold">
+                        {{ `${product.meter_price_with_coef} ₽/м` }}
+                      </span>
+                      <p v-if="product.ton_price_with_coef && product.meter_price_with_coef" class="text-xs font-normal text-gray-600 dark:text-gray-400">
                         {{ product.meter_price_with_coef }} ₽/м
                       </p>
-                      <p v-if="product.unit_price_with_coef" class="text-xs font-normal text-gray-600 dark:text-gray-400">
+                      <p v-if="product.ton_price_with_coef && product.unit_price_with_coef" class="text-xs font-normal text-gray-600 dark:text-gray-400">
                         {{ product.unit_price_with_coef }} ₽/шт
                       </p>
                       <!-- <p v-if="product.meter_price_with_coef || product.unit_price_with_coef" class="text-xs font-normal text-gray-600 dark:text-gray-400">
                         <span v-if="product.meter_price_with_coef">{{ product.meter_price_with_coef }} ₽/м </span>
                         <span v-if="product.unit_price_with_coef">{{ product.unit_price_with_coef }} ₽/шт</span>
                       </p> -->
+                    </div>
+                    <div v-else>
+                      <span class="font-bold">
+                        По запросу
+                      </span>
                     </div>
                   </td>
                   <td class="px-4 py-4 text-sm font-medium whitespace-nowrap">

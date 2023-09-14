@@ -20,7 +20,6 @@ export default defineNuxtConfig({
       language: 'ru-RU',
     },
   },
-  components: true,
   ssr: true,
   typescript: {
     strict: true,

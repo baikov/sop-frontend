@@ -3,7 +3,7 @@ interface MenuItem {
   name: string
   depth: number
   slug: string
-  image: string | null
+  image?: string | null
   submenu: MenuItem[] | []
 }
 interface IBreadcrumb {
@@ -54,7 +54,7 @@ interface IProduct {
   slug: string
   properties: IProductPropertyValue[]
   unit_price_with_coef: number
-  ton_price_with_coef: number
+  ton_price_with_coef: number | string
   meter_price_with_coef: number
   seo: ISEO
   category: string

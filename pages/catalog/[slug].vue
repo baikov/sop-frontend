@@ -24,8 +24,7 @@ useHead({
     },
     {
       name: 'robots',
-      content: `${detailCategory?.value?.seo.is_index ? 'index' : 'noindex'}, ${
-        detailCategory?.value?.seo.is_follow ? 'follow' : 'nofollow'
+      content: `${detailCategory?.value?.seo.is_index ? 'index' : 'noindex'}, ${detailCategory?.value?.seo.is_follow ? 'follow' : 'nofollow'
         }`,
     },
     {
@@ -47,7 +46,7 @@ useHead({
   <div class="flex flex-col w-full flex-1">
     <PageBreadcrumbs :items="detailCategory?.breadcrumbs" />
     <PageHeader :h1="detailCategory?.seo.h1 || detailCategory?.name" />
-    <div class="mx-auto flex max-w-7xl gap-4 px-4 flex-1 w-full">
+    <div class="flex max-w-7xl px-4 flex-1 w-full mx-auto gap-4">
       <div class="hidden flex-col md:flex md:w-4/12 lg:w-3/12">
         <CatalogSidebar />
       </div>
@@ -58,10 +57,7 @@ useHead({
         </div>
 
         <div v-if="productList && detailCategory?.product_properties">
-          <CatalogProductTable
-            :products="productList"
-            :product-properties="detailCategory?.product_properties"
-          />
+          <CatalogProductTable :products="productList" :product-properties="detailCategory?.product_properties" />
         </div>
       </div>
     </div>

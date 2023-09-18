@@ -212,8 +212,8 @@ defineProps<{
                     <!-- <div class="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
                       В наличии
                     </div> -->
-                    <span v-if="product.in_stock" class="text-green-700 dark:text-green-500">На складе</span>
-                    <span v-else class="text-yellow-700 dark:text-yellow-500">Под заказ</span>
+                    <span v-if="product.in_stock" class="text-green-700 dark:text-green-500">Много</span>
+                    <span v-else class="text-yellow-700 dark:text-yellow-500">Мало</span>
                     <!-- <Icon v-if="product.in_stock" name="mdi:check" class="h-6 w-6 text-green-700" />
                     <Icon v-else name="mdi:close" class="h-6 w-6 text-red-700" /> -->
                   </td>
